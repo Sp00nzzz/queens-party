@@ -4,8 +4,9 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // base: '/queens-party/', // 👈 removed for Vercel deployment
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         manualChunks: {
@@ -14,9 +15,6 @@ export default defineConfig({
           icons: ['lucide-react']
         }
       }
-    },
-    chunkSizeWarningLimit: 1000,
-    assetsInlineLimit: 4096, // Inline small assets
-    minify: 'esbuild'
+    }
   }
 })
