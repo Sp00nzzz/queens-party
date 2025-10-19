@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "lucide-react": "^0.263.1",
@@ -28,5 +29,6 @@
     "postcss": "^8.4.27",
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5"
-  }
+  },
+  "homepage": "https://Sp00nzzz.github.io/queens-party"
 }
