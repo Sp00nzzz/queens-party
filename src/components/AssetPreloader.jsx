@@ -2,14 +2,10 @@ import { useEffect } from 'react';
 
 const AssetPreloader = () => {
   useEffect(() => {
-    // Preload critical images
+    // Preload only the most critical images
     const criticalImages = [
       '/Assets/Map.png',
-      '/Assets/Logo.png',
-      '/Assets/BudlightBeerAd.png',
-      '/Assets/dialouge.png',
-      '/Assets/Yesbutton.png',
-      '/Assets/Nobutton.png'
+      '/Assets/Logo.png'
     ];
 
     criticalImages.forEach(src => {
@@ -17,14 +13,9 @@ const AssetPreloader = () => {
       img.src = src;
     });
 
-    // Preload critical audio files only when user interacts
+    // Preload only essential audio files to reduce requests
     const preloadAudio = () => {
       const audioFiles = [
-        '/Assets/stagesmusic.mp3',
-        '/Assets/AleHouseMusic.mp3',
-        '/Assets/TrinityMusic.mp3',
-        '/Assets/ShwarmaDubaiMusic.mp3',
-        '/Assets/PizzaPizzaMusic.mp3',
         '/Assets/Drinkingsound.mp3',
         '/Assets/Wink.mp3'
       ];
