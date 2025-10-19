@@ -9,15 +9,20 @@ const IntroVideo = ({ onVideoEnd, onFadeStart }) => {
     const video = videoRef.current;
     if (!video) return;
 
-    // Handle user interaction to enable audio playback
+    // Try to enable audio on any user interaction
     const enableAudio = () => {
-      video.muted = false;
-      document.removeEventListener('click', enableAudio);
-      document.removeEventListener('keydown', enableAudio);
+      if (video.muted) {
+        video.muted = false;
+        console.log('Audio enabled on user interaction');
+      }
     };
 
+    // Add multiple event listeners to catch any user interaction
     document.addEventListener('click', enableAudio);
     document.addEventListener('keydown', enableAudio);
+    document.addEventListener('touchstart', enableAudio);
+    document.addEventListener('mousemove', enableAudio);
+    document.addEventListener('scroll', enableAudio);
 
     const handleTimeUpdate = () => {
       const currentTime = video.currentTime;
@@ -58,11 +63,16 @@ const IntroVideo = ({ onVideoEnd, onFadeStart }) => {
         video.volume = 0.7; // Default volume
       }
       
-      // Start playing the video with audio
+      // Try to play with audio first
+      video.muted = false;
       video.play().catch(error => {
-        console.log('Video autoplay failed:', error);
-        // If autoplay fails, end the intro immediately
-        onVideoEnd();
+        console.log('Audio autoplay failed, trying muted:', error);
+        // If audio autoplay fails, try muted
+        video.muted = true;
+        video.play().catch(mutedError => {
+          console.log('Muted autoplay also failed:', mutedError);
+          onVideoEnd();
+        });
       });
     };
 
@@ -83,6 +93,9 @@ const IntroVideo = ({ onVideoEnd, onFadeStart }) => {
       video.removeEventListener('error', handleError);
       document.removeEventListener('click', enableAudio);
       document.removeEventListener('keydown', enableAudio);
+      document.removeEventListener('touchstart', enableAudio);
+      document.removeEventListener('mousemove', enableAudio);
+      document.removeEventListener('scroll', enableAudio);
     };
   }, [onVideoEnd]);
 
