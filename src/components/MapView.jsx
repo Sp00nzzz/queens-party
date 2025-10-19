@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 const MapView = ({ navigateToStages, navigateToAle, navigateToTrinity, navigateToShwarma, navigateToPizza, navigateToPopeyes }) => {
   return (
@@ -156,4 +156,4 @@ const MapView = ({ navigateToStages, navigateToAle, navigateToTrinity, navigateT
   );
 };
 
-export default MapView;
+export default memo(MapView);

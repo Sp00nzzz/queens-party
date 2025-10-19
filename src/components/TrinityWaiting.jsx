@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 
@@ -137,4 +137,4 @@ const TrinityWaiting = () => {
   );
 };
 
-export default TrinityWaiting;
+export default memo(TrinityWaiting);

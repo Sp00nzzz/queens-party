@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, memo } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { clubs, npcDialogueData } from '../constants/clubs';
 
@@ -1951,4 +1951,4 @@ const ClubView = ({
   );
 };
 
-export default ClubView;
+export default memo(ClubView);

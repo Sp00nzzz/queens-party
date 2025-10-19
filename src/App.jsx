@@ -5,6 +5,7 @@ import MapView from './components/MapView';
 import ClubView from './components/ClubView';
 import VolumeSlider from './components/VolumeSlider';
 import TrinityWaiting from './components/TrinityWaiting';
+import AssetPreloader from './components/AssetPreloader';
 import { useAudio } from './hooks/useAudio';
 
 // Main app component with routing
@@ -93,10 +94,11 @@ const AppContent = () => {
 
   return (
     <div>
+      <AssetPreloader />
       <audio
         ref={audioRef}
         loop
-        preload="auto"
+        preload="none"
         controls={false}
         style={{ display: 'none' }}
       >
@@ -107,7 +109,7 @@ const AppContent = () => {
       <audio
         ref={aleAudioRef}
         loop
-        preload="auto"
+        preload="none"
         controls={false}
         style={{ display: 'none' }}
       >
@@ -118,7 +120,7 @@ const AppContent = () => {
       <audio
         ref={trinityAudioRef}
         loop
-        preload="auto"
+        preload="none"
         controls={false}
         style={{ display: 'none' }}
       >
@@ -129,7 +131,7 @@ const AppContent = () => {
       <audio
         ref={shwarmaAudioRef}
         loop
-        preload="auto"
+        preload="none"
         controls={false}
         style={{ display: 'none' }}
       >
@@ -140,7 +142,7 @@ const AppContent = () => {
       <audio
         ref={pizzaAudioRef}
         loop
-        preload="auto"
+        preload="none"
         controls={false}
         style={{ display: 'none' }}
       >
@@ -151,7 +153,7 @@ const AppContent = () => {
       <audio
         ref={popeyesAudioRef}
         loop
-        preload="auto"
+        preload="none"
         controls={false}
         style={{ display: 'none' }}
       >
@@ -161,7 +163,7 @@ const AppContent = () => {
       
       <audio
         ref={drinkingAudioRef}
-        preload="auto"
+        preload="none"
         controls={false}
         style={{ display: 'none' }}
       >
@@ -171,7 +173,7 @@ const AppContent = () => {
       
       <audio
         ref={winkAudioRef}
-        preload="auto"
+        preload="none"
         controls={false}
         style={{ display: 'none' }}
       >
