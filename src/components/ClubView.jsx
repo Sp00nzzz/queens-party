@@ -183,7 +183,7 @@ const ClubView = ({
         if (budlightDrinkCount + 1 >= 3) {
           setTimeout(() => {
             if (drinkingAudioRef.current) {
-              drinkingAudioRef.current.src = "/Assets/burp.mp3";
+              drinkingAudioRef.current.src = "/Assets/Burp.mp3";
               drinkingAudioRef.current.currentTime = 0;
               drinkingAudioRef.current.play().catch(error => {
                 console.log('Burp sound play failed:', error);
