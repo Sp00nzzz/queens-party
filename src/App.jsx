@@ -118,7 +118,7 @@ const AppContent = () => {
       
       {/* Intro Video */}
       {showIntro && (
-        <IntroVideo onVideoEnd={handleIntroEnd} onFadeStart={handleVideoFade} />
+        <IntroVideo onVideoEnd={handleIntroEnd} onOpacityChange={handleVideoFade} />
       )}
 
       {/* PlumLogo - Shows on top of intro video */}
