@@ -21,7 +21,7 @@ const MapView = ({ navigateToStages, navigateToAle, navigateToTrinity, navigateT
           >
             <div className="relative rounded-lg shadow-2xl transition-all group-hover:scale-110 border-2 border-white overflow-hidden" style={{ width: '180px', height: '120px' }}>
               <img 
-                src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqoEdSRAXWtbSXA0zJbdqXU8RU6TcvSy_PL0lb38qzMmeDA6QdzB0GyUKXej2AtBwcd-8RZYGZEG9c-7yzIcRrO6IQ6y9q75MtaqPAdFCTdmdHDTBGnCPxFkevDEZpnox4o9yXXnQ=s1360-w1360-h1020-rw"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo6S1FhsDkDB17l5cN79CfoFQCZdcx_2tNUQ&s"
                 alt="Shwarma Dubai" 
                 draggable="false"
                 className="w-full h-full object-cover"
