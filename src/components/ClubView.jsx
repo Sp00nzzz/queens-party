@@ -750,7 +750,7 @@ const ClubView = ({
                 className="hover:scale-110 transition-transform duration-200"
               >
                 <img 
-                  src="/Assets/Nobutton.png" 
+                  src="/Assets/NoButton.png" 
                   alt="No Button" 
                   draggable="false"
                   className="w-20 h-12 object-contain"

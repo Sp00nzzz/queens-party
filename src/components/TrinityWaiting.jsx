@@ -109,7 +109,7 @@ const TrinityWaiting = () => {
         <div className="absolute bottom-4 right-20 z-50">
           <div className="animate-slide-up">
             <img 
-              src="/Assets/phonePopup.png"
+              src="/Assets/Phonepopup.png"
               alt="Phone Popup" 
               draggable="false"
               className="w-128 h-96 object-contain"
