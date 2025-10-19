@@ -443,7 +443,7 @@ const ClubView = ({
               src={isWinking ? 
                 (clubKey === 'ale' ? "/Assets/AlehouseBartenderWink.png" : 
                  clubKey === 'trinity' ? "/Assets/TrinityBartenderWink.png" : "/Assets/SydneysweeneyWink.png") : 
-                (clubKey === 'ale' ? "/Assets/AlehouseBartender.png" : 
+                (clubKey === 'ale' ? "/Assets/AleHouseBartender.png" : 
                  clubKey === 'trinity' ? "/Assets/TrinityBartender.png" : "/Assets/SydneySweeneyBartenderStages.png")}
               alt={clubKey === 'ale' ? "Ale House Bartender" : 
                     clubKey === 'trinity' ? "Trinity Bartender" : "Sydney Sweeney Bartender"} 
@@ -679,7 +679,7 @@ const ClubView = ({
                 className="hover:scale-110 transition-transform duration-200"
               >
                 <img 
-                  src="/Assets/Nobutton.png" 
+                  src="/Assets/NoButton.png" 
                   alt="No Button" 
                   draggable="false" 
                   className="w-20 h-12 object-contain"
