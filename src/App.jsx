@@ -6,6 +6,8 @@ import ClubView from './components/ClubView';
 import VolumeSlider from './components/VolumeSlider';
 import TrinityWaiting from './components/TrinityWaiting';
 import AssetPreloader from './components/AssetPreloader';
+import IntroVideo from './components/IntroVideo';
+import PlumLogo from './components/PlumLogo';
 import { useAudio } from './hooks/useAudio';
 
 // Main app component with routing
@@ -25,6 +27,9 @@ const AppContent = () => {
   const [lastDrink, setLastDrink] = useState(null);
   const [barMessage, setBarMessage] = useState('');
   const [showSettings, setShowSettings] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
+  const [showPlumLogo, setShowPlumLogo] = useState(false);
+  const [videoOpacity, setVideoOpacity] = useState(1);
   
   // Global volume state
   const [globalVolume, setGlobalVolume] = useState(() => {
@@ -80,6 +85,21 @@ const AppContent = () => {
     navigate('/trinity');
   }, [navigate]);
 
+  // Handle intro video end
+  const handleIntroEnd = useCallback(() => {
+    setShowIntro(false);
+  }, []);
+
+  // Handle video fade progress
+  const handleVideoFade = useCallback((opacity) => {
+    setVideoOpacity(opacity);
+  }, []);
+
+  // Handle PlumLogo end
+  const handlePlumLogoEnd = useCallback(() => {
+    setShowPlumLogo(false);
+  }, []);
+
 
   // Use audio hook
   const { audioRef, aleAudioRef, trinityAudioRef, shwarmaAudioRef, pizzaAudioRef, popeyesAudioRef, drinkingAudioRef, winkAudioRef } = useAudio(currentLocation, globalVolume);
@@ -95,6 +115,16 @@ const AppContent = () => {
   return (
     <div>
       <AssetPreloader />
+      
+      {/* Intro Video */}
+      {showIntro && (
+        <IntroVideo onVideoEnd={handleIntroEnd} onFadeStart={handleVideoFade} />
+      )}
+
+      {/* PlumLogo - Shows on top of intro video */}
+      {showIntro && (
+        <PlumLogo onLogoEnd={handlePlumLogoEnd} videoOpacity={videoOpacity} />
+      )}
       <audio
         ref={audioRef}
         loop
@@ -192,20 +222,22 @@ const AppContent = () => {
         />
       </div>
 
-      {/* Settings Icon - Fixed positioning like Budlight ad */}
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          setShowSettings(!showSettings);
-        }}
-        className="fixed bottom-4 right-4 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-3 rounded-full z-50 transition-all duration-200 hover:scale-110"
-      >
-        <Settings className="w-6 h-6" />
-      </button>
+      {/* Settings Icon - Fixed positioning like Budlight ad - Hidden on map view */}
+      {currentLocation !== '/' && (
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setShowSettings(!showSettings);
+          }}
+          className="fixed bottom-4 right-4 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-3 rounded-full z-50 transition-all duration-200 hover:scale-110"
+        >
+          <Settings className="w-6 h-6" />
+        </button>
+      )}
 
-      {/* Settings Popup - Fixed positioning relative to fixed settings icon */}
-      {showSettings && (
+      {/* Settings Popup - Fixed positioning relative to fixed settings icon - Hidden on map view */}
+      {currentLocation !== '/' && showSettings && (
         <div className="fixed bottom-16 right-4 bg-black bg-opacity-90 p-4 rounded-lg z-[9999] min-w-[200px]">
           <div className="flex items-center gap-2 mb-3">
             <Volume2 className="w-5 h-5 text-white" />

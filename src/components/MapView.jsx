@@ -151,6 +151,16 @@ const MapView = ({ navigateToStages, navigateToAle, navigateToTrinity, navigateT
             height="150px"
           />
         </div>
+
+        {/* Built by credit - Top left corner */}
+        <div className="absolute top-3 left-4 z-30">
+          <p 
+            className="text-black text-lg font-black opacity-30"
+            style={{ fontFamily: 'Helvetica, sans-serif' }}
+          >
+            built by: <br />  @immikewing
+          </p>
+        </div>
       </div>
     </div>
   );
