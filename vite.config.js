@@ -17,10 +17,5 @@ export default defineConfig({
     },
     chunkSizeWarningLimit: 1000,
     assetsInlineLimit: 4096, // Inline small assets
-  },
-  server: {
-    headers: {
-      'Cache-Control': 'public, max-age=31536000'
-    }
   }
 })
