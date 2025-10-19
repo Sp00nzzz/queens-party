@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/queens-party/', // 👈 this line is crucial
+  // base: '/queens-party/', // 👈 removed for Vercel deployment
 })
