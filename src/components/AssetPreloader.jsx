@@ -17,7 +17,7 @@ const AssetPreloader = () => {
     const preloadAudio = () => {
       const audioFiles = [
         '/Assets/Drinkingsound.mp3',
-        '/Assets/Wink.mp3'
+        '/Assets/PhoneVibrate.m4a'
       ];
 
       audioFiles.forEach(src => {

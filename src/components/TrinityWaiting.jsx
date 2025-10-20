@@ -77,7 +77,7 @@ const TrinityWaiting = () => {
         controls={false}
         style={{ display: 'none' }}
       >
-        <source src="/Assets/Wink.mp3" type="audio/mpeg" />
+        <source src="/Assets/PhoneVibrate.m4a" type="audio/mp4" />
         Your browser does not support the audio element.
       </audio>
       
