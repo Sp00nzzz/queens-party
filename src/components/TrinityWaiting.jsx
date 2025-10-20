@@ -8,6 +8,7 @@ const TrinityWaiting = () => {
   const [showPhonePopup, setShowPhonePopup] = useState(false);
   const audioRef = useRef(null);
   const winkAudioRef = useRef(null);
+  const phoneVibrateAudioRef = useRef(null);
 
   useEffect(() => {
     // Play background music when component mounts
@@ -30,13 +31,13 @@ const TrinityWaiting = () => {
       });
     }, 1000);
 
-    // Show phone popup after 3 seconds and play wink sound
+    // Show phone popup after 3 seconds and play phone vibrate sound
     const phonePopupTimer = setTimeout(() => {
       setShowPhonePopup(true);
-      if (winkAudioRef.current) {
-        winkAudioRef.current.volume = 0.7;
-        winkAudioRef.current.play().catch(error => {
-          console.log('Wink sound play failed:', error);
+      if (phoneVibrateAudioRef.current) {
+        phoneVibrateAudioRef.current.volume = 0.7;
+        phoneVibrateAudioRef.current.play().catch(error => {
+          console.log('Phone vibrate sound play failed:', error);
         });
       }
     }, 1300);
@@ -52,6 +53,10 @@ const TrinityWaiting = () => {
       if (winkAudioRef.current) {
         winkAudioRef.current.pause();
         winkAudioRef.current.currentTime = 0;
+      }
+      if (phoneVibrateAudioRef.current) {
+        phoneVibrateAudioRef.current.pause();
+        phoneVibrateAudioRef.current.currentTime = 0;
       }
     };
   }, [navigate]);
@@ -73,6 +78,17 @@ const TrinityWaiting = () => {
       {/* Wink Sound Effect */}
       <audio
         ref={winkAudioRef}
+        preload="auto"
+        controls={false}
+        style={{ display: 'none' }}
+      >
+        <source src="/Assets/Wink.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      {/* Phone Vibrate Sound Effect */}
+      <audio
+        ref={phoneVibrateAudioRef}
         preload="auto"
         controls={false}
         style={{ display: 'none' }}
