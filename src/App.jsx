@@ -8,14 +8,17 @@ import TrinityWaiting from './components/TrinityWaiting';
 import AssetPreloader from './components/AssetPreloader';
 import IntroVideo from './components/IntroVideo';
 import PlumLogo from './components/PlumLogo';
+import MobileDetector from './components/MobileDetector';
 import { useAudio } from './hooks/useAudio';
 
 // Main app component with routing
 const QueensPartyApp = () => {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <MobileDetector>
+      <Router>
+        <AppContent />
+      </Router>
+    </MobileDetector>
   );
 };
 
