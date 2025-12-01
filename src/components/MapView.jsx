@@ -63,7 +63,7 @@ const MapView = ({ navigateToStages, navigateToAle, navigateToTrinity, navigateT
           >
             <div className="relative rounded-lg shadow-2xl transition-all group-hover:scale-110 border-2 border-white overflow-hidden" style={{ width: '180px', height: '120px' }}>
               <img 
-                src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4noZOI0h3JbD2tKGnuk-vt6vaOYAdGeO3r8DecOSOuNt9zI7oN30rU2TllqdbOTHnpfO061KFsCBLEZEl6ZNHAKMB4cCwBUTdUi9tLdtdjPka_9MLpxH09nOvnpcgK18iP7DXb-3=s1360-w1360-h1020-rw"
+                src="/Assets/popeyes.png"
                 alt="Popeyes" 
                 draggable="false"
                 className="w-full h-full object-cover"
@@ -126,7 +126,7 @@ const MapView = ({ navigateToStages, navigateToAle, navigateToTrinity, navigateT
           >
             <div className="relative rounded-lg shadow-2xl transition-all group-hover:scale-110 border-2 border-white overflow-hidden" style={{ width: '180px', height: '120px' }}>
               <img 
-                src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrteC3Ob-m3n6fDOKSa63wfJRvcqNTp_D9jajlYDag4VirODJ9dH13mHzHYSXuO7gTgie6KdCnwx8qSUXXPpYtLQtSVN0FdpFySxwNo7_0X9vntxwE4gZttPpqqR6U6u9Emg9Z0=s1360-w1360-h1020-rw"
+                src="/Assets/pizzapizza.webp"
                 alt="Pizza Pizza" 
                 draggable="false"
                 className="w-full h-full object-cover"
