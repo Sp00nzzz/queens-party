@@ -98,7 +98,7 @@ const TrinityWaiting = () => {
       </audio>
       
       <img 
-        src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqL9n68nssBb2z-duRtZEaTMzI-oJIoxyZtjkwSjwinFTzr_YEL3YCETV5KOWyPzztloHhecxzBxhqz7x30d-rPjFFxYps05zUaGtXw5VRJ_SIQiXCtmDdU1fyPifp-NSTKYPO8uiKKdHdJ=s1360-w1360-h1020-rw"
+        src="/Assets/trinwaiting.png"
         alt="Trinity Waiting"
         className="w-full h-full object-cover"
       />

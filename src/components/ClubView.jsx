@@ -246,10 +246,10 @@ const ClubView = ({
           return "url('/Assets/ShwarmaDubaiInside.png')";
         }
         if (clubKey === 'pizza') {
-          return "url('https://lh3.googleusercontent.com/gps-cs-s/AC9h4nqRrTmJoxO1oNvGj8hZelDuoJKpDiCEwcR6Ml1pi6aax4xaHgbJo-l7xIwCJap18h47F7Ra8PXSVjiWoUT1Yxmc0xbm10UtNck9efQ5YkyOPX_dgqHb_jMetqHPz_3Vk9HPVKW_7Q=s1360-w1360-h1020-rw')";
+          return "url('/Assets/pizzapizzainside.webp')";
         }
         if (clubKey === 'popeyes') {
-          return "url('https://lh3.googleusercontent.com/gps-cs-s/AC9h4np_bF9bd4xQkIzO-qH-anhQ9J3rWNBDtxVP12Qhyc1DEE2InxXNx1lHxUMsIIqvn7A4-iWlSw_IzNSY8x76mogPFNenYo_BOpWSyjTxc-cYZDF9h3odTZlTPwZ49QEnP5DhlQfacg=s1360-w1360-h1020-rw')";
+          return "url('/Assets/popeyesinside.jpg')";
         }
         return 'none';
   }, [clubKey, currentArea]);
