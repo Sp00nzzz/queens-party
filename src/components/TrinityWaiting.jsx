@@ -98,7 +98,7 @@ const TrinityWaiting = () => {
       </audio>
       
       <img 
-        src="/Assets/trinwaiting.png"
+        src="/Assets/TrinityLineWaiting.png"
         alt="Trinity Waiting"
         className="w-full h-full object-cover"
       />
